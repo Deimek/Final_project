@@ -1,0 +1,370 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.hero-section-wrapper {
+  background: linear-gradient(228.57deg, #323264 11.93% 57.17%, #643e72 87.46%);
+  border-radius: 0 0 12px 12px;
+  min-height: 100vh;
+  margin-bottom: 80px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.hero-section-wrapper:before, .hero-section-wrapper:after {
+  content: "";
+  border-radius: 0 0 12px 12px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+}
+
+.hero-section-wrapper:before {
+  background: #cacadb;
+  width: calc(100% - 40px);
+  bottom: -10px;
+  left: 20px;
+}
+
+.hero-section-wrapper:after {
+  background: #e7e7f2;
+  width: calc(100% - 80px);
+  bottom: -20px;
+  left: 40px;
+}
+
+.header {
+  justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.header-inner {
+  z-index: 1;
+  min-height: 100vh;
+  position: relative;
+}
+
+.header-bcg {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+.header-nav {
+  grid-gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "logo address"
+                       "logo nav";
+  grid-auto-rows: minmax(33px, auto);
+  padding-top: 50px;
+  display: grid;
+}
+
+@media (width <= 1023px) {
+  .header-nav {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (width <= 767px) {
+  .header-nav {
+    grid-template-columns: 1fr;
+    grid-template-areas: "address"
+                         "logo"
+                         "nav";
+  }
+}
+
+.header-nav .logo {
+  grid-area: logo;
+}
+
+.header-address {
+  color: #fff;
+  grid-area: address;
+  justify-self: end;
+  align-items: center;
+  gap: 6px;
+  display: flex;
+}
+
+@media (width <= 767px) {
+  .header-address {
+    justify-self: start;
+  }
+}
+
+.header-links {
+  grid-area: nav;
+  justify-self: end;
+  gap: 15px;
+  display: flex;
+}
+
+@media (width <= 767px) {
+  .header-links {
+    justify-self: start;
+  }
+}
+
+.header-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.local-btn {
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 7px;
+  font-weight: bold;
+}
+
+.local-btn.active {
+  background: #f0145a;
+}
+
+.consistent-section {
+  padding: 60px 0;
+}
+
+.consistent-section-inner {
+  gap: 60px;
+  display: flex;
+}
+
+@media (width <= 903px) {
+  .consistent-section-inner {
+    flex-flow: column;
+  }
+}
+
+@media (width <= 767px) {
+  .consistent-section-inner {
+    gap: 30px;
+  }
+}
+
+.consistent-section-left {
+  flex: 3;
+}
+
+@media (width <= 1023px) {
+  .consistent-section-left {
+    flex: 1;
+  }
+}
+
+.consistent-section-right {
+  color: #fff;
+  flex-flow: column;
+  flex: 4;
+  justify-content: center;
+  gap: 30px;
+  display: flex;
+}
+
+@media (width <= 1023px) {
+  .consistent-section-right {
+    flex: 1;
+  }
+}
+
+.consistent-section-heading {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+@media (width <= 767px) {
+  .consistent-section-heading {
+    font-size: 20px;
+  }
+}
+
+.consistent-section-text {
+  font-size: 19px;
+  line-height: 30px;
+}
+
+@media (width <= 767px) {
+  .consistent-section-text {
+    gap: 30px;
+  }
+}
+
+.consistent-section-list {
+  color: #b3b3ba;
+  text-align: right;
+  border-right: 4px solid #ffffff4d;
+  flex-flow: column;
+  gap: 30px;
+  padding: 5px 60px 5px 0;
+  font-size: 38px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+}
+
+.consistent-section-list::-webkit-scrollbar-thumb {
+  background-color: #ffffff4d;
+  outline: 1px solid #ffffff4d;
+}
+
+.consistent-section-list::-webkit-scrollbar {
+  width: 1em;
+}
+
+.consistent-section-list-item {
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.consistent-section-list-item.active {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #ef8080 .84%, #f0145a 99.96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.consistent-section-list-item:hover {
+  color: #f0145a;
+}
+
+@media (width <= 903px) {
+  .consistent-section-list {
+    white-space: nowrap;
+    border-right: 0;
+    flex-flow: row;
+    padding: 5px 0 60px;
+    overflow: auto;
+  }
+}
+
+@media (width <= 767px) {
+  .consistent-section-list {
+    padding: 0 0 30px;
+    font-size: 30px;
+  }
+}
+
+.what-we-do-section-heading {
+  margin-bottom: 60px;
+}
+
+.what-we-do-section-heading a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #24a3ff;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color .3s;
+  display: flex;
+}
+
+.what-we-do-section-heading a svg {
+  color: #24a3ff;
+  transition: color .3s;
+}
+
+.what-we-do-section-heading a:hover, .what-we-do-section-heading a:hover svg {
+  color: #f0145a;
+}
+
+.what-we-do-section-heading h2 {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #f0145a .84%, #ef8080 99.96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+@media (width <= 767px) {
+  .what-we-do-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .what-we-do-section-heading {
+    margin-bottom: 30px;
+  }
+}
+
+.what-we-do-section-cards {
+  grid-gap: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+
+.what-we-do-section-cards-item svg {
+  margin-bottom: 30px;
+}
+
+.what-we-do-section-cards-item h4 {
+  color: #24a3ff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.what-we-do-section-cards-item p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+@media (width <= 903px) {
+  .what-we-do-section-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 767px) {
+  .what-we-do-section-cards {
+    grid-gap: 30px;
+  }
+}
+
+@media (width <= 576px) {
+  .what-we-do-section-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=index.30e9e7bd.css.map */
