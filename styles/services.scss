@@ -1,0 +1,42 @@
+.services-section {
+    &__heading {
+        margin-bottom: 60px;
+
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 60px;
+
+        &-item {
+            img {
+                margin-bottom: 30px;
+            }
+
+            h4 {
+                color: #24a3ff;
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+
+            p {
+                color: #fff;
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+
+        @include _767 {
+            grid-gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include _576 {
+            grid-gap: 30px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+    }
+}

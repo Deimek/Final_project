@@ -1,0 +1,51 @@
+.banners-section {
+
+    &__wrapper-block {
+        display: grid;
+        justify-content: center;
+        margin-bottom: 60px;
+
+        @include _1223 {
+            margin-bottom: 0;
+        }
+    }
+
+
+    &__title {
+        color: var(--Main-Regular, #323264);
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0 auto 30px;
+
+    }
+
+    &__items-block {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include _767 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include _576 {
+            grid-template-columns: repeat(1, 1fr);
+            overflow-y: auto;
+            height: 720px;
+        }
+    }
+
+    &__items {
+        object-fit: cover;
+        height: 120px;
+        width: 100%;
+    }
+}
+
+.global-title--local {
+    @include _576 {
+        overflow-wrap: break-word;
+    }
+}

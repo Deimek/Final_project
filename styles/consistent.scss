@@ -1,0 +1,112 @@
+.consistent-section {
+    padding: 60px 0;
+
+    &__inner {
+        display: flex;
+        gap: 60px;
+
+        @include _903 {
+            flex-flow: column;
+        }
+
+        @include _767 {
+            gap: 30px;
+        }
+    }
+
+    &__left {
+        flex: 3;
+
+        @include _1023 {
+            flex: 1;
+        }
+    }
+
+    &__right {
+        flex: 4;
+        color: #fff;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        gap: 30px;
+
+        @include _1023 {
+            flex: 1;
+        }
+    }
+
+    &__heading {
+        font-size: 30px;
+        font-weight: 700;
+
+        @include _767 {
+            font-size: 20px;
+        }
+    }
+
+    &__text {
+        font-size: 19px;
+        line-height: 30px;
+
+        @include _767 {
+            gap: 30px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        color: #b3b3ba;
+        font-size: 38px;
+        font-weight: 700;
+        text-align: right;
+        display: flex;
+        flex-flow: column;
+        gap: 30px;
+        padding: 5px 60px 5px 0;
+        border-right: 4px solid rgba(255, 255, 255, 0.3);
+
+        //     custom scroll
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.3);
+            outline: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        &::-webkit-scrollbar-track {
+            //       use if you need scrollbar track
+            // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        &::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        &-item {
+            cursor: pointer;
+            transition: 0.3s color;
+
+            &.active {
+                background: linear-gradient(90deg, #ef8080 0.84%, #f0145a 99.96%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            &:hover {
+                color: #f0145a;
+            }
+        }
+
+        @include _903 {
+            border-right: 0;
+            flex-flow: row;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 5px 0 60px;
+        }
+
+        @include _767 {
+            font-size: 30px;
+            padding: 0 0 30px;
+        }
+    }
+}
